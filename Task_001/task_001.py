@@ -5,7 +5,7 @@
 # - при $d = 0.001, π = 3.141.$    $10^{-1} ≤ d ≤10^{-10}$
 
 import os
-
+import decimal as dc
 
 # запрос вещественного числа 
 def input_float(msg: str)-> float:
@@ -23,3 +23,7 @@ os.system('cls')
 num = input_float('введите число: ')
 precision = input_int('введите точность (чисел после запятой): ')
 
+num = dc.Decimal(num)
+
+
+print(round(num, precision))
