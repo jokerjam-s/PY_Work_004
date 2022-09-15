@@ -5,27 +5,30 @@
 
 import os
 import math as mt
-from unittest import result
 
 # запрос целочисленного числа 
 def input_int(msg: str)-> int:
     return int(input(msg))
 
-def factoriz(n):
-    result = []
+# поиск множителей
+def get_factors(n):
+    fact = []
 
-    for i in range(2, mt.sqrt(float(n))):
-        while(n % i == 0):
-            n /= i
-            result.append(i)
+    for i in range(2, int(mt.sqrt(n))+1):
+        while n % i == 0:
+            n = n / i
+            fact.append(i)
+    
+    if(n > 1):
+        fact.append(int(n))
 
-    return result
-
+    return fact
 
 ## MAIN ##
 os.system('cls')
 
 num = input_int('Введите число: ')
-print(factoriz(num))
+print(get_factors(num))
+
 
 

@@ -23,7 +23,4 @@ os.system('cls')
 num = input_float('введите число: ')
 precision = input_int('введите точность (чисел после запятой): ')
 
-num = dc.Decimal(num)
-
-
-print(round(num, precision))
+print(round(dc.Decimal(num), precision))
